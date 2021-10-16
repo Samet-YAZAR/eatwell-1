@@ -15,8 +15,8 @@ variables:
 
 jobs:
 
-- job: backend
-  displayName: Backend_Build 
+- job: UI
+  displayName: UI_Build 
   workspace:
     clean: all
   # variables:
