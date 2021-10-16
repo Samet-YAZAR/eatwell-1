@@ -2,8 +2,15 @@
 steps:
 - bash: |
     echo '##vso[task.setVariable variable=stageName]Create delta stage'
+
   displayName: ===Create delta stage=== 
 
 - script: |
     echo $(stageName)
+    echo $(Build.SourcesDirectory)
+    echo $(Build.Repository.ID)
+    echo $(System.PullRequest.PullRequestId)
+    echo $(Build.BuildId)
+    echo  'originalRepoName= $(Build.Repository.Name)'
+    echo $(System.PullRequest.PullRequestId)
   displayName: Set to Create delta stage
