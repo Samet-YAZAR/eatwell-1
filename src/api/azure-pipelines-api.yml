@@ -1,6 +1,6 @@
 trigger:
   paths:
-    include: # Include!
+    include:
     - 'src/api/*'
   
 pool:
@@ -9,6 +9,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   stageName: "First stage" 
+  # csproj file path needs to be assigned as a path to the solution variable.
   solution: 'src\api\WebApplication1\WebApplication1\WebApplication1.csproj'
   buildPlatform: 'Any CPU'
 
