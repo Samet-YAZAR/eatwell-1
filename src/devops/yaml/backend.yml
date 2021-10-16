@@ -1,0 +1,13 @@
+parameters:
+- name: artifactDirectory
+  type: string
+- name: errorsLogFilePath
+  type: string
+- name: settings
+  type: object
+
+steps:
+- bash: |
+    echo '##vso[task.setVariable variable=stageName]Create delta stage'
+    echo $stageName
+  displayName: ===Create delta stage=== 

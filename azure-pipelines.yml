@@ -5,7 +5,10 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
-  buildConfiguration: 'Release'
+  - name: buildConfiguration
+    value: 'Release'
+  - name: stageName
+    value: "First stage"
 
 jobs:
 
@@ -15,6 +18,6 @@ jobs:
     clean: all
   # variables:
   #   - group: Eat_Well_Variable_Group
-  # steps:
-  #   - template: devops/yaml/backend.yml
+  steps:
+    - template: devops/yaml/backend.yml
  
