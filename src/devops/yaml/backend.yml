@@ -2,5 +2,8 @@
 steps:
 - bash: |
     echo '##vso[task.setVariable variable=stageName]Create delta stage'
-    echo $(stageName)
   displayName: ===Create delta stage=== 
+
+- script: |
+    echo $(stageName)
+  displayName: Set to Create delta stage
