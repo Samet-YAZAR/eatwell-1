@@ -3,15 +3,14 @@ trigger:
     include: # Include!
     - 'src/api/*'
   
-  
 pool:
   vmImage: 'windows-latest'
 
 variables:
-  - name: buildConfiguration
-    value: 'Release'
-  - name: stageName
-    value: "First stage"
+  buildConfiguration: 'Release'
+  stageName: "First stage" 
+  solution: '**\*.sln'
+  buildPlatform: 'Any CPU'
 
 jobs:
 
