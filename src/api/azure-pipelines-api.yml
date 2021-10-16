@@ -15,12 +15,12 @@ variables:
 
 jobs:
 
-- job: backend
+- job: Backend
   displayName: Backend_Build 
   workspace:
     clean: all
   # variables:
   #   - group: Eat_Well_Variable_Group
   steps:
-    - template: src/devops/yaml/backend.yml
+    - template: ../devops/yaml/backend.yml
  
