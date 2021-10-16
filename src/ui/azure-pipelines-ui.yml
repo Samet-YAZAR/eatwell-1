@@ -21,5 +21,5 @@ jobs:
     clean: all
   # variables:
   #   - group: Eat_Well_Variable_Group
-  steps:
-    - template: src/devops/yaml/backend.yml
+  # steps:
+  #   - template: src/devops/yaml/backend.yml
