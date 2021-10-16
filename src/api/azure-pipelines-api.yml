@@ -9,7 +9,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   stageName: "First stage" 
-  solution: '**\*.sln'
+  solution: '\*.sln'
   buildPlatform: 'Any CPU'
 
 jobs:
