@@ -1,10 +1,8 @@
 trigger:
   paths:
-    exclude: # Exclude!
-      - 'src/ui/*'
-      - 'src/api/*'
-      - 'src/mobile/*'
-      - 'src/qa/*'
+    include: # Include!
+    - 'src/mobile/*'
+  
   
 pool:
   vmImage: 'windows-latest'
