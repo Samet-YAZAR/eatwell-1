@@ -1,42 +1,23 @@
-variables:
-  solution: '**\*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
 
 steps:
-- bash: |
-    echo '##vso[task.setVariable variable=stageName]Create delta stage'
-
-  displayName: ===Create delta stage=== 
-
-- script: |
-    echo $(stageName)
-    echo $(Build.SourcesDirectory)
-    echo $(Build.Repository.ID)
-    echo $(System.PullRequest.PullRequestId)
-    echo $(Build.BuildId)
-    echo  'originalRepoName= $(Build.Repository.Name)'
-    echo $(System.PullRequest.PullRequestId)
-  displayName: Set to Create delta stage
-
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
   inputs:
     restoreSolution: '$(solution)'
-    
+
 - task: VSBuild@1
   inputs:
-    solution: '$(solution)'
+    solution: '**\*.sln'
     vsVersion: '16.0'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    platform: 'Any CPU'
+    configuration: 'Release'
 
 - task: VSTest@2
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    platform: 'Any CPU'
+    configuration: 'Release'
 
 - task: PublishBuildArtifacts@1
   inputs:
